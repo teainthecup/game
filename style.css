@@ -3,6 +3,7 @@ main {
     grid-template-columns: 33% 33% 33%;
     width: 100%;
     margin: auto;
+    background-color: #847996;
 }
 a:link, a:visited   {
     text-decoration: none;
@@ -16,17 +17,35 @@ h1 {
     font-size: 40px;
       
 }
+p {
+    background-color:#88B7B5;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 5px;
+    text-align: justify;
+    }
+
+.start{
+    background-color: #88B7B5;
+    color:black;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+        
+}
 
 h2{
     background-color: #A7CAB1;
     text-align: center;
+    margin-top: 0%;
+}
+.rules{
+    background-color: #A7CAB1;
+    text-align: center;
+    margin: 0%;
+    font-size: 25px;
+    font-weight: bold;
 }
 
-h3{
-    background-color: #F4ECD6;
-    text-align: center;
-    margin: 0px 0px 0px 0px;
-}
 footer {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -36,13 +55,6 @@ footer {
     background-color:   #310A31;
     padding-right: 30px;
     margin-top: 13px;
-    }
-
-p {
-    background-color:#88B7B5;
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 5px;
-    text-align: justify;
     }
 
 .menu{         
