@@ -85,23 +85,18 @@ a#active {
     background-color: #847996;
     color: black;
 }
-.grid {
-    width: 600px;
-    height: 500px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 10px 50px 50px 50px;
-    border: 2px solid #cbcbcb;    
-}
+
 
 #container {
-    width: 100%;
+    display:inline;
+    float:left;
+    width: 49%; 
     height: 600px;
     background-color: #333;
-    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    margin: 5px;
     border-radius: 7px;
     touch-action: none;
   }
@@ -136,8 +131,8 @@ a#active {
     height: 60px;
     background-color: rgb(0, 255, 231);
     border: 10px solid rgba(136, 136, 136, .5);
-    top: -40%;
-    left: -10%;
+    top: 40%;
+    left: 10%;
   }
 
   .four {
