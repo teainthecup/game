@@ -14,15 +14,9 @@ droppableElements.forEach(elem => {
   elem.addEventListener("drop", drop); // Fires when an item is dropped on a valid drop target
 });
 
-// Drag and Drop Functions
-
-//Events fired on the drag target
-
 function dragStart(event) {
   event.dataTransfer.setData("text", event.target.id); // or "text/plain" but just "text" would also be fine since we are not setting any other type/format for data value
 }
-
-//Events fired on the drop target
 
 function dragEnter(event) {
   if(!event.target.classList.contains("dropped")) {
@@ -32,7 +26,7 @@ function dragEnter(event) {
 
 function dragOver(event) {
   if(!event.target.classList.contains("dropped")) {
-    event.preventDefault(); // Prevent default to allow drop
+    event.preventDefault(); 
   }
 }
 
@@ -45,19 +39,18 @@ function dragLeave(event) {
 function drop(event) {
   event.preventDefault(); // This is in order to prevent the browser default handling of the data
   event.target.classList.remove("droppable-hover");
-  const draggableElementData = event.dataTransfer.getData("text"); // Get the dragged data. This method will return any data that was set to the same type in the setData() method
+  const draggableElementData = event.dataTransfer.getData("text"); 
   const droppableElementData = event.target.getAttribute("data-draggable-id");
   const isCorrectMatching = draggableElementData === droppableElementData;
   if(isCorrectMatching) {
     const draggableElement = document.getElementById(draggableElementData);
     event.target.classList.add("dropped");
-    event.target.style.color = 'black'; // This approach works only for inline styles. A more general approach would be the following: 
-    //event.target.style.backgroundColor = window.getComputedStyle(draggableElement).color; //stejna barva jako cislo
+    event.target.style.color = 'black';     
     event.target.style.backgroundColor = window.getComputedStyle(draggableElement).color;
     draggableElement.classList.add("dragged");
     draggableElement.setAttribute("draggable", "false");
     event.target.insertAdjacentHTML("afterbegin",`<i>${draggableElementData}</i>`);
-    //event.target.insertAdjacentHTML("afterbegin",`<i id="${draggableElementData}"></i>`);
+
   }
 }
   
