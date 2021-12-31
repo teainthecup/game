@@ -55,6 +55,7 @@ function drop(event) {
       var endTime = performance.now();
       var score = endTime - startTime;
       alert('Váš čas byl: ' + score + ' millisekund.');
+      localStorage.setItem("score", score);
     }
   }
 }

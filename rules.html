@@ -16,6 +16,9 @@
         <div class="rules"> LEVEL 1 <br>
             Seřaď čísla tak, jak jdou za sebou. 
         </div>
+
+        <p>Skóre: <strong id="score"></strong></p>
+
         <div class="container">
             <div class="center">                
                 <a href="drag.html"><button class="start">  Start </button> </a>                     
@@ -42,4 +45,7 @@
         transform: translate(-50%, -50%);
         }
     </style>
+    <script>
+        document.getElementById("score").innerHTML = localStorage.getItem('score');
+    </script>
 </html>
