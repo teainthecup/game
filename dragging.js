@@ -1,10 +1,10 @@
 const draggableElements = document.querySelectorAll(".draggable");
 const droppableElements = document.querySelectorAll(".droppable");
+let count = 0;
+var startTime = performance.now();
 
 draggableElements.forEach(elem => {
-  elem.addEventListener("dragstart", dragStart); // Fires as soon as the user starts dragging an item - This is where we can define the drag data
-  // elem.addEventListener("drag", drag); // Fires when a dragged item (element or text selection) is dragged
-  // elem.addEventListener("dragend", dragEnd); // Fires when a drag operation ends (such as releasing a mouse button or hitting the Esc key) - After the dragend event, the drag and drop operation is complete
+  elem.addEventListener("dragstart", dragStart);   
 });
 
 droppableElements.forEach(elem => {
@@ -15,18 +15,18 @@ droppableElements.forEach(elem => {
 });
 
 function dragStart(event) {
-  event.dataTransfer.setData("text", event.target.id); // or "text/plain" but just "text" would also be fine since we are not setting any other type/format for data value
+  event.dataTransfer.setData("text", event.target.id);  
 }
 
 function dragEnter(event) {
   if(!event.target.classList.contains("dropped")) {
-    event.target.classList.add("droppable-hover");
+    event.target.classList.add("droppable-hover");  
   }
 }
 
 function dragOver(event) {
   if(!event.target.classList.contains("dropped")) {
-    event.preventDefault(); 
+    event.preventDefault();    
   }
 }
 
@@ -37,7 +37,7 @@ function dragLeave(event) {
 }
 
 function drop(event) {
-  event.preventDefault(); // This is in order to prevent the browser default handling of the data
+  event.preventDefault(); 
   event.target.classList.remove("droppable-hover");
   const draggableElementData = event.dataTransfer.getData("text"); 
   const droppableElementData = event.target.getAttribute("data-draggable-id");
@@ -50,8 +50,11 @@ function drop(event) {
     draggableElement.classList.add("dragged");
     draggableElement.setAttribute("draggable", "false");
     event.target.insertAdjacentHTML("afterbegin",`<i>${draggableElementData}</i>`);
-
+    count++;
+    if(count == 10){
+      var endTime = performance.now();
+      var score = endTime - startTime;
+      alert('Váš čas byl: ' + score + ' millisekund.');
+    }
   }
 }
-  
-
