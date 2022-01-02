@@ -44,6 +44,8 @@ h2{
     margin: 0%;
     font-size: 25px;
     font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 footer {
@@ -60,11 +62,13 @@ footer {
 .menu{         
     display: block;
     margin-bottom: 5px;
-    background-color: #847996;
+    background-color: #4e2b88;
     overflow: hidden;
     font-weight: bold;
     font-size: large;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
     } 
 
 .menu a {
@@ -84,6 +88,15 @@ footer {
 a#active {
     background-color: #847996;
     color: black;
+}
+
+.zpet{
+    
+    background-color: #665188;
+    color:black;
+    text-align: center;
+    font-size: 25px;
+   
 }
 
 
@@ -108,41 +121,6 @@ a#active {
     position: relative;
   }
 
-  .one {
-    width: 60px;
-    height: 60px;
-    background-color: rgb(245, 230, 99);
-    border: 10px solid rgba(136, 136, 136, .5);
-    top: 0px;
-    left: 0px;
-  }
-
-  .two {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(196, 241, 190, 1);
-    border: 10px solid rgba(136, 136, 136, .5);
-    top: 30%;
-    left: 10%;
-  }
-
-  .three {
-    width: 60px;
-    height: 60px;
-    background-color: rgb(0, 255, 231);
-    border: 10px solid rgba(136, 136, 136, .5);
-    top: 40%;
-    left: 10%;
-  }
-
-  .four {
-    width: 60px;
-    height: 60px;
-    background-color: rgb(233, 210, 244);
-    border: 10px solid rgba(136, 136, 136, .5);
-    top: -10%;
-    left: 5%;
-  }
 
   .item:active {
     opacity: .75;
