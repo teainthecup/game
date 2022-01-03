@@ -19,6 +19,7 @@
         
         <div class="rules"> 
             <p>Nejlepší skóre ze hry čísla: <strong id="score"></strong></p> <br>
+            <p>Nejlepší úspěšnost ze hry Loga: <strong id="success"></strong></p> <br>
             Znovu si zahraj:
         </div>
         <div class="container">
@@ -49,5 +50,6 @@
     </style>
     <script>
         document.getElementById("score").innerHTML = localStorage.getItem('score');
+        document.getElementById("success").innerHTML = localStorage.getItem('success');
     </script>
 </html>

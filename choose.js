@@ -209,8 +209,6 @@ const brands = [
     
     draggableElements.forEach(elem => {
       elem.addEventListener("dragstart", dragStart);
-      // elem.addEventListener("drag", drag);
-      // elem.addEventListener("dragend", dragEnd);
     });
     
     droppableElements.forEach(elem => {
@@ -220,8 +218,6 @@ const brands = [
       elem.addEventListener("drop", drop);
     });
   }
-  
-  // Drag and Drop Functions
   
   //Events fired on the drag target
   
@@ -270,15 +266,19 @@ const brands = [
       totalSpan.textContent = total;
       scoreSection.style.opacity = 1;
     }, 200);
-    if(correct===Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
+    if(correct===Math.min(totalMatchingPairs, totalDraggableItems)) { 
       playAgainBtn.style.display = "block";
       setTimeout(() => {
         playAgainBtn.classList.add("play-again-btn-entrance");
       }, 200);
+      let success = correct/total * 100;
+      //console.log(success);
+      alert('Vaše úspěšnost byla: ' + success);
+      localStorage.setItem("success", success);
+
     }
   }
-  
-  // Other Event Listeners
+
   playAgainBtn.addEventListener("click", playAgainBtnClick);
   function playAgainBtnClick() {
     playAgainBtn.classList.remove("play-again-btn-entrance");
@@ -302,7 +302,6 @@ const brands = [
     }, 500);
   }
   
-  // Auxiliary functions
   function generateRandomItemsArray(n, originalArray) {
     let res = [];
     let clonedArray = [...originalArray];
