@@ -220,6 +220,7 @@ const brands = [
   
   function dragStart(event) {
     event.dataTransfer.setData("text", event.target.id); 
+  }
   function dragEnter(event) {
     if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
       event.target.classList.add("droppable-hover");
@@ -306,4 +307,3 @@ const brands = [
     }
     return res;
   }
-}

@@ -21,20 +21,15 @@ body {
   position: absolute;
   top: -0.5rem;
   left: 50%;
-  margin-left: -50px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #111;
-	border: 5px double #fff; 
-	border-radius: 14px;
-	padding: 8px 10px;  
-  outline: none;
-  letter-spacing: .05em;
+  margin-left: -50px;  
+	padding: 8px 10px;    
   cursor: pointer;
   display: none;
-  opacity: 0;
-  transition: opacity 0.5s, transform 0.5s, background-color 0.2s;
+  background-color: #665188;
+  color:black;
+  text-align: center;
+  font-size: 25px;
+  
 }
 #play-again-btn:hover {
   background-color: #333;
