@@ -2,16 +2,17 @@ const draggableElements = document.querySelectorAll(".draggable");
 const droppableElements = document.querySelectorAll(".droppable");
 let count = 0;
 var startTime = performance.now();
+var score = 0;
 
 draggableElements.forEach(elem => {
   elem.addEventListener("dragstart", dragStart);   
 });
 
 droppableElements.forEach(elem => {
-  elem.addEventListener("dragenter", dragEnter); // Fires when a dragged item enters a valid drop target
-  elem.addEventListener("dragover", dragOver); // Fires when a dragged item is being dragged over a valid drop target, repeatedly while the draggable item is within the drop zone
-  elem.addEventListener("dragleave", dragLeave); // Fires when a dragged item leaves a valid drop target
-  elem.addEventListener("drop", drop); // Fires when an item is dropped on a valid drop target
+  elem.addEventListener("dragenter", dragEnter); 
+  elem.addEventListener("dragover", dragOver); 
+  elem.addEventListener("dragleave", dragLeave); 
+  elem.addEventListener("drop", drop); 
 });
 
 function dragStart(event) {
@@ -53,7 +54,8 @@ function drop(event) {
     count++;
     if(count == 10){
       var endTime = performance.now();
-      var score = endTime - startTime;
+      score = endTime - startTime;
+      
       alert('Váš čas byl: ' + score + ' millisekund.');
       localStorage.setItem("score", score);
     }
