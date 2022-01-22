@@ -1,5 +1,5 @@
 class Drag {
-  constructor(dragDiv, dropDiv, brand) {
+  constructor(dragDiv, dropDiv) {
       //<i class="fab fa-${randomDraggableBrands[i].iconName} draggable" draggable="true" style="color: ${randomDraggableBrands[i].color};" id="${randomDraggableBrands[i].iconName}"></i>
       this.dragDiv = dragDiv;
       this.dropDiv = dropDiv;
@@ -28,12 +28,21 @@ class Drag {
       }
   }
 
-  writeHtml() {
-      this.dragDiv.append(this.draggableElement);
-      this.dropDiv.append(this.match);
+  writeHtml(draggableElement, match ) {
+    this.dragDiv.append(draggableElement);
+    this.dropDiv.append(match);
   }
 
-  assignDrop(dropFunction) {
-      this.droppable.addEventListener("drop", dropFunction);
+  assignDrop(dropElement, dropFunction) {
+      dropElement.addEventListener("drop", dropFunction);
   }
+
+  writeDroppable(match){
+   this.dropDiv.append(match); 
+  }
+
+  writeDraggable(draggableElement){
+    this.dragDiv.append(draggableElement);
+  }
+
 }

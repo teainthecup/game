@@ -27,7 +27,7 @@ class BrandDrag extends Drag{
         //this.dropElement.innerHTML = brand.brandName;
   
         this.match.append(label,this.droppable);
-        this.writeHtml();
+        this.writeHtml(this.draggableElement,this.match);
   
         this.draggableElement.addEventListener("dragstart", this.dragStart);
   

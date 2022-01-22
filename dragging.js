@@ -1,43 +1,47 @@
-const draggableElements = document.querySelectorAll(".draggable");
-const droppableElements = document.querySelectorAll(".droppable");
 let count = 0;
 var startTime = performance.now();
 var score = 0;
 
-draggableElements.forEach(elem => {
-  elem.addEventListener("dragstart", dragStart);   
+const drag = document.querySelector(".draggable-elements");
+const dropp = document.querySelector(".droppable-elements");
+
+let cislo = prompt("Zadejte číslo: ");
+let arr = [];
+let arrDrop = [];
+
+function newRandom(cislo){
+  let newNumber = Math.floor(Math.random()*cislo);
+  while(arr.includes(newNumber)){
+    newNumber = Math.floor(Math.random()*cislo);
+  }
+  arr.push(newNumber);
+  return newNumber;
+}
+
+for(let x = 0; x < 10; x++){
+    newRandom(cislo);
+}
+
+arr.forEach(number => {
+  let tmp = new NumberDrag(drag, dropp, number,"black");
+  tmp.assignDrop(tmp.droppable, drop);
+  tmp.writeDraggable(tmp.i);
 });
 
-droppableElements.forEach(elem => {
-  elem.addEventListener("dragenter", dragEnter); 
-  elem.addEventListener("dragover", dragOver); 
-  elem.addEventListener("dragleave", dragLeave); 
-  elem.addEventListener("drop", drop); 
+arr.sort(function(a,b){
+  return a-b;
 });
 
-function dragStart(event) {
-  event.dataTransfer.setData("text", event.target.id);  
-}
+arr.forEach(number => {
+  let tmp = new NumberDrag(drag, dropp, number,"black");
+  tmp.assignDrop(tmp.droppable, drop);
+  tmp.writeDroppable(tmp.droppable);
+});
 
-function dragEnter(event) {
-  if(!event.target.classList.contains("dropped")) {
-    event.target.classList.add("droppable-hover");  
-  }
-}
+const draggableElements = document.querySelectorAll(".draggable");
+const droppableElements = document.querySelectorAll(".droppable");
 
-function dragOver(event) {
-  if(!event.target.classList.contains("dropped")) {
-    event.preventDefault();    
-  }
-}
-
-function dragLeave(event) {
-  if(!event.target.classList.contains("dropped")) {
-    event.target.classList.remove("droppable-hover");
-  }
-}
-
-function drop(event) {
+function drop(event){
   event.preventDefault(); 
   event.target.classList.remove("droppable-hover");
   const draggableElementData = event.dataTransfer.getData("text"); 
@@ -46,7 +50,7 @@ function drop(event) {
   if(isCorrectMatching) {
     const draggableElement = document.getElementById(draggableElementData);
     event.target.classList.add("dropped");
-    event.target.style.color = 'black';     
+    event.target.style.color = 'white';     
     event.target.style.backgroundColor = window.getComputedStyle(draggableElement).color;
     draggableElement.classList.add("dragged");
     draggableElement.setAttribute("draggable", "false");
