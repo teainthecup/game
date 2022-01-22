@@ -55,6 +55,7 @@ body {
 .droppable.dropped {
   border-style: solid;
   color: #fff;
+  text-align: center;
 }
 .droppable.dropped span {
   font-size: 0.75rem;

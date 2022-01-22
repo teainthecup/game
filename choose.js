@@ -178,8 +178,6 @@ const brands = [
   
   const draggableItems = document.querySelector(".draggable-items");
   const matchingPairs = document.querySelector(".matching-pairs");
-  let draggableElements;
-  let droppableElements;
   
   initiateGame();
   
@@ -188,13 +186,12 @@ const brands = [
     const randomDroppableBrands = totalMatchingPairs<totalDraggableItems ? generateRandomItemsArray(totalMatchingPairs, randomDraggableBrands) : randomDraggableBrands;
     const alphabeticallySortedRandomDroppableBrands = [...randomDroppableBrands].sort((a,b) => a.brandName.toLowerCase().localeCompare(b.brandName.toLowerCase()));
     
+    /*
     for(let i=0; i<randomDraggableBrands.length; i++) {
       draggableItems.insertAdjacentHTML("beforeend", `
         <i class="fab fa-${randomDraggableBrands[i].iconName} draggable" draggable="true" style="color: ${randomDraggableBrands[i].color};" id="${randomDraggableBrands[i].iconName}"></i>
       `);
     }
-    
-
     for(let i=0; i<alphabeticallySortedRandomDroppableBrands.length; i++) {
       matchingPairs.insertAdjacentHTML("beforeend", `
         <div class="matching-pair">
@@ -203,43 +200,14 @@ const brands = [
         </div>
       `);
     }
+    */
+   let randomBrand = generateRandomItemsArray(5, brands);
+   randomBrand.forEach(brand => {
+      let drag = new Drag(draggableItems, matchingPairs, brand);
+      drag.assignDrop(drop);
+   });
+  }
     
-    draggableElements = document.querySelectorAll(".draggable");
-    droppableElements = document.querySelectorAll(".droppable");
-    
-    draggableElements.forEach(elem => {
-      elem.addEventListener("dragstart", dragStart);
-    });
-    
-    droppableElements.forEach(elem => {
-      elem.addEventListener("dragenter", dragEnter);
-      elem.addEventListener("dragover", dragOver);
-      elem.addEventListener("dragleave", dragLeave);
-      elem.addEventListener("drop", drop);
-    });
-  }
-  
-  function dragStart(event) {
-    event.dataTransfer.setData("text", event.target.id); 
-  }
-  function dragEnter(event) {
-    if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
-      event.target.classList.add("droppable-hover");
-    }
-  }
-  
-  function dragOver(event) {
-    if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
-      event.preventDefault();
-    }
-  }
-  
-  function dragLeave(event) {
-    if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
-      event.target.classList.remove("droppable-hover");
-    }
-  }
-  
   function drop(event) {
     event.preventDefault();
     event.target.classList.remove("droppable-hover");
