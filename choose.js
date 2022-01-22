@@ -1,170 +1,171 @@
 const brands = [
-    {
-      iconName: "android",
-      brandName: "Android",
-      color: "#a4c639"
-    },
-    {
-      iconName: "app-store-ios",
-      brandName: "App Store",
-      color: "#5fc9f8"
-    },
-    {
-      iconName: "apple",
-      brandName: "Apple",
-      color: "#aaaaaa"
-    },
-    {
-      iconName: "bitcoin",
-      brandName: "Bitcoin",
-      color: "#d4af37"
-    },
-    {
-      iconName: "blackberry",
-      brandName: "BlackBerry",
-      color: "#000000" 
-    },
-    {
-      iconName: "blogger",
-      brandName: "Blogger",
-      color: "#f57d00" 
-    },
-    {
-      iconName: "bluetooth",
-      brandName: "Bluetooth",
-      color: "#3b5998" 
-    },
-    {
-      iconName: "bootstrap",
-      brandName: "Bootstrap",
-      color: "#553c7b" 
-    },
-    {
-      iconName: "chrome",
-      brandName: "Google Chrome",
-      color: "#333333" 
-    },
-    {
-      iconName: "discord",
-      brandName: "Discord",
-      color: "#7289da"
-    },    
-    {
-      iconName: "dropbox",
-      brandName: "Dropbox",
-      color: "#007ee5" 
-    },   
-    {
-      iconName: "ebay",
-      brandName: "eBay",
-      color: "#333333" 
-    },
-    {
-      iconName: "edge",
-      brandName: "Microsoft Edge",
-      color: "#0078d7" 
-    },    
-    {
-      iconName: "facebook-square",
-      brandName: "Facebook",
-      color: "#3b5998" 
-    },    
-    {
-      iconName: "github",
-      brandName: "GitHub",
-      color: "#333333" 
-    },
-    {
-      iconName: "google",
-      brandName: "Google",
-      color: "#333333" 
-    },
-    {
-      iconName: "google-play",
-      brandName: "Google Play",
-      color: "#3bccff" 
-    },    
-    {
-      iconName: "html5",
-      brandName: "HTML5",
-      color: "#e34f26" 
-    },   
-    {
-      iconName: "internet-explorer",
-      brandName: "Internet Explorer",
-      color: "#1ebbee" 
-    },
-    {
-      iconName: "java",
-      brandName: "Java",
-      color: "#5382a1" 
-    },
-    {
-      iconName: "js-square",
-      brandName: "JavaScript",
-      color: "#333333" 
-    },   
-    {
-      iconName: "linkedin",
-      brandName: "LinkedIn",
-      color: "#0077b5" 
-    },
-    {
-      iconName: "linux",
-      brandName: "Linux",
-      color: "#000000" 
-    },
-    {
-      iconName: "microsoft",
-      brandName: "Microsoft",
-      color: "#111111" 
-    },
-    {
-      iconName: "node",
-      brandName: "Node.js",
-      color: "#68a063"
-    },
-    {
-      iconName: "php",
-      brandName: "PHP",
-      color: "#8892be" 
-    },    
-    {
-      iconName: "python",
-      brandName: "Python",
-      color: "#4584b6" 
-    },    
-    {
-      iconName: "react",
-      brandName: "React",
-      color: "#00d8ff" 
-    },
-    {
-      iconName: "reddit",
-      brandName: "reddit",
-      color: "#ff4500" 
-    },
-    {
-      iconName: "stack-overflow",
-      brandName: "Stack Overflow",
-      color: "#f48024" 
-    },
-    {
-      iconName: "windows",
-      brandName: "Microsoft Windows",
-      color: "#0078d7" 
-    },
-    {
-      iconName: "wix",
-      brandName: "Wix.com",
-      color: "#333333" 
-    },
-    {
-      iconName: "wordpress",
-      brandName: "WordPress",
-      color: "#21759b" 
-    },    
-  ];
+  new Brand(
+   "android",
+   "Android",
+   "#a4c639"
+  ),
+  new Brand(
+     "app-store-ios",
+     "App Store",
+     "#5fc9f8"
+  ),
+  new Brand(
+     "apple",
+     "Apple",
+     "#aaaaaa"
+  ),
+  new Brand(
+     "bitcoin",
+     "Bitcoin",
+     "#d4af37"
+  ),
+  new Brand(
+     "blackberry",
+     "BlackBerry",
+     "#000000" 
+  ),
+  new Brand(
+     "blogger",
+     "Blogger",
+     "#f57d00" 
+  ),
+  new Brand(
+     "bluetooth",
+     "Bluetooth",
+     "#3b5998" 
+  ),
+  new Brand(
+     "bootstrap",
+     "Bootstrap",
+     "#553c7b" 
+  ),
+  new Brand(
+     "chrome",
+     "Google Chrome",
+     "#333333" 
+  ),
+  new Brand(
+     "discord",
+     "Discord",
+     "#7289da"
+  ),    
+  new Brand(
+     "dropbox",
+     "Dropbox",
+     "#007ee5" 
+  ),   
+  new Brand(
+     "ebay",
+     "eBay",
+     "#333333" 
+  ),
+  new Brand(
+     "edge",
+     "Microsoft Edge",
+     "#0078d7" 
+  ),    
+  new Brand(
+     "facebook-square",
+     "Facebook",
+     "#3b5998" 
+  ),    
+  new Brand(
+     "github",
+     "GitHub",
+     "#333333" 
+  ),
+  new Brand(
+     "google",
+     "Google",
+     "#333333" 
+  ),
+  new Brand(
+     "google-play",
+     "Google Play",
+     "#3bccff" 
+  ),    
+  new Brand(
+     "html5",
+     "HTML5",
+     "#e34f26" 
+  ),   
+  new Brand(
+     "internet-explorer",
+     "Internet Explorer",
+     "#1ebbee" 
+  ),
+  new Brand(
+     "java",
+     "Java",
+     "#5382a1" 
+  ),
+  new Brand(
+     "js-square",
+     "JavaScript",
+     "#333333" 
+  ),   
+  new Brand(
+     "linkedin",
+     "LinkedIn",
+     "#0077b5" 
+  ),
+  new Brand(
+     "linux",
+     "Linux",
+     "#000000" 
+  ),
+  new Brand(
+     "microsoft",
+     "Microsoft",
+     "#111111" 
+  ),
+  new Brand(
+     "node",
+     "Node.js",
+     "#68a063"
+  ),
+  new Brand(
+     "php",
+     "PHP",
+     "#8892be" 
+  ),    
+  new Brand(
+     "python",
+     "Python",
+     "#4584b6" 
+  ),    
+  new Brand(
+     "react",
+     "React",
+     "#00d8ff" 
+  ),
+  new Brand(
+     "reddit",
+     "reddit",
+     "#ff4500" 
+  ),
+  new Brand(
+     "stack-overflow",
+     "Stack Overflow",
+     "#f48024" 
+  ),
+  new Brand(
+     "windows",
+     "Microsoft Windows",
+     "#0078d7" 
+  ),
+  new Brand(
+     "wix",
+     "Wix.com",
+     "#333333" 
+  ),
+  new Brand(
+     "wordpress",
+     "WordPress",
+     "#21759b" 
+  ),    
+];
+  
   let correct = 0;
   let total = 0;
   const totalDraggableItems = 5;
