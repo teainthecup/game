@@ -203,7 +203,7 @@ const brands = [
     */
    let randomBrand = generateRandomItemsArray(5, brands);
    randomBrand.forEach(brand => {
-      let drag = new Drag(draggableItems, matchingPairs, brand);
+      let drag = new BrandDrag(draggableItems, matchingPairs, brand);
       drag.assignDrop(drop);
    });
   }
