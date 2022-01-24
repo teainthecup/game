@@ -97,6 +97,9 @@ body {
 }
 .dropped {
   border-style: solid;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 .dragged {
   user-select: none;
